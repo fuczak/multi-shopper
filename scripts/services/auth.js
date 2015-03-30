@@ -1,23 +1,23 @@
 'use strict';
 
-app.factory('Auth', ['FURL', '$firebase', function(FURL, $firebase) {
+app.factory('Auth', ['FURL', '$firebaseAuth', function(FURL, $firebaseAuth) {
 
 	var ref = new Firebase(FURL);
+	var auth = $firebaseAuth(ref);
 
 	var Auth = {
 		user: {},
 		register: function(user) {
-			ref.createUser({
+			return auth.$createUser({
 				email: user.email,
 				password: user.password
-			}, function(error, userData) {
-				if (error) {
-					alert(error)
-				} else {
-					Auth.createProfile(userData.uid, user);
-					Auth.login(user);
-				}
 			})
+			.then(function() {
+				return Auth.login(user);
+			})
+			.then(function(data) {
+				return Auth.createProfile(data.uid, user);
+			});
 		},
 		createProfile: function(uid, user) {
 			var profile = {
@@ -28,15 +28,9 @@ app.factory('Auth', ['FURL', '$firebase', function(FURL, $firebase) {
 			return profileRef.child(uid).set(profile);
 		},
 		login: function(user) {
-			ref.authWithPassword({
+			return auth.$authWithPassword({
 				email: user.email,
 				password: user.password
-			}, function(error, authData) {
-				if (error) {
-					alert(error)
-				} else {
-					alert('logged in as ' + user.name)
-				}
 			});
 		}
 	};

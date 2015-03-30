@@ -20,6 +20,9 @@ ng-view {
 	position: relative;
 	top: 100px;
 }
+#loading-bar {
+	z-index: 99;
+}
 .ion-navicon {
 	position: fixed;
 	font-size: 50px;
