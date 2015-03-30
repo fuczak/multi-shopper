@@ -1,0 +1,17 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Lobster', cursive;
+}
+h1 {
+	font-size: 50px;
+}
+p {
+	font-family: 'Cebin', sans-serif;
+	font-size: 16px;
+}
+snap-content {
+	background: red;
+}

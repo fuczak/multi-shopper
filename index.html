@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>MultiShopper</title>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="/bower_components/snapjs/snap.css">
+		<link rel="stylesheet" href="/styles/main.css">
+	</head>
+	<body ng-app="MultiShopper">
+		<snap-drawer>
+			<h3>Hello from drawer</h3>
+			<button class="btn-btn-danger" snap-close>Close</button>
+		</snap-drawer>
+		<snap-content>
+			<button class="btn btn-primary" snap-toggle>Toggle menu</button>
+			<div ng-view></div>
+		</snap-content>
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/bower_components/snapjs/snap.js"></script>
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-route/angular-route.js"></script>
+		<script src="/bower_components/angular-snap/angular-snap.js"></script>
+		<script src="/scripts/app.js"></script>
+	</body>
+</html>
