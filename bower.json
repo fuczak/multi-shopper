@@ -23,6 +23,6 @@
     "angular-gravatar": "~0.3.0",
     "firebase": "~2.2.3",
     "angularfire": "~1.0.0",
-    "angular-loading-bar": "~0.7.1"
+    "angularjs-toaster": "~0.4.11"
   }
 }
