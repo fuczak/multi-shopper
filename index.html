@@ -6,19 +6,20 @@
 		<title>MultiShopper</title>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
 		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.css">
 		<link rel="stylesheet" href="/bower_components/snapjs/snap.css">
 		<link rel="stylesheet" href="/styles/main.css">
 	</head>
 	<body ng-app="MultiShopper">
 		<snap-drawer>
-			<h3>Hello from drawer</h3>
+			<div ng-include="'views/nav.html'"></div>
 			<button class="btn-btn-danger" snap-close>Close</button>
 		</snap-drawer>
 		<snap-content>
-			<button class="btn btn-primary" snap-toggle>Toggle menu</button>
-			<div ng-view></div>
+			<i class="icon ion-navicon" snap-toggle></i>
+			<ng-view></ng-view>
 		</snap-content>
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -26,6 +27,13 @@
 		<script src="/bower_components/angular/angular.js"></script>
 		<script src="/bower_components/angular-route/angular-route.js"></script>
 		<script src="/bower_components/angular-snap/angular-snap.js"></script>
+		<script src="/bower_components/angular-gravatar/build/angular-gravatar.js"></script>
+		<script src="/bower_components/firebase/firebase.js"></script>
+		<script src="/bower_components/angularfire/dist/angularfire.js"></script>
 		<script src="/scripts/app.js"></script>
+		<script src="/scripts/controllers/nav.js"></script>
+		<script src="/scripts/controllers/auth.js"></script>
+		<script src="/scripts/services/auth.js"></script>
+		<script src="/scripts/directives/passwordMatch.js"></script>
 	</body>
 </html>

@@ -1,7 +1,17 @@
 'use strict';
 
-var app = angular.module('MultiShopper', ['ngRoute', 'snap'])
-	.config(['$routeProvider', 'snapRemoteProvider', function($routeProvider, snapRemoteProvider) {
+var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar'])
+	.constant('FURL', 'https://multi-shopper.firebaseio.com')
+	/* uncomment when authorization module is complete
+	.run(function($rootScope, $location) {
+		$rootScope.$on('$routeChangeError', function(event, next, previous, error) {
+			if (error === 'AUTH_REQUIRED') {
+				$location.path('/welcome');
+			};
+		});
+	})
+	*/
+	.config(['$routeProvider', 'snapRemoteProvider', 'gravatarServiceProvider', function($routeProvider, snapRemoteProvider, gravatarServiceProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/main.html'
@@ -10,7 +20,8 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap'])
 				templateUrl: 'views/login.html'
 			})
 			.when('/register', {
-				templateUrl: 'views/register.html'
+				templateUrl: 'views/register.html',
+				controller: 'AuthCtrl'
 			})
 			.when('/browse', {
 				templateUrl: 'views/browse.html'
@@ -21,9 +32,13 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap'])
 			.otherwise({
 				redirectTo: '/'
 			});
-			snapRemoteProvider.globalOptions = {
-				disable: 'right',
-				//Enabling touch to drag only in touch devices
-				touchToDrag: window.navigator.msMaxTouchPoints || 'ontouchstart' in document.createElement('div') ? true : false
-			}
+		snapRemoteProvider.globalOptions = {
+			disable: 'right',
+			//Enabling touch to drag only in touch devices
+			touchToDrag: window.navigator.msMaxTouchPoints || 'ontouchstart' in document.createElement('div') ? true : false
+		};
+		gravatarServiceProvider.defaults = {
+			'default': 'mm',
+			size: 50
+		};
 	}]);

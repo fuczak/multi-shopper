@@ -13,5 +13,46 @@ p {
 	font-size: 16px;
 }
 snap-content {
-	background: red;
+	background: url(../images/main_bg.jpeg) no-repeat center center;
+	background-size: cover;
+}
+ng-view {
+	position: relative;
+	top: 100px;
+}
+.ion-navicon {
+	position: fixed;
+	font-size: 50px;
+	top: 20px;
+	left: 20px;
+	color: white;
+	cursor: pointer;
+	padding: 20px;
+}
+.panel {
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 0;
+	color: #fff;
+}
+.btn {
+	border: 1px solid #fff;
+	transiton: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+}
+.btn-transparent {
+	background: transparent;
+}
+.btn-round {
+	border-radius: 17px;
+}
+.btn-round-lg {
+	border-radius: 22.5px;
+}
+.btn-round-sm {
+	border-radius: 15px;
+}
+.btn-round-xs {
+	border-radius: 11px;
+	padding-left: 10px;
+	padding-right: 10px;
 }

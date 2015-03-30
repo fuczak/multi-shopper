@@ -1,0 +1,50 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="text-center">Register for free</h2>
+				</div>
+				<div class="panel-body">
+					<form novalidate ng-submit="register(user)" name="registerForm">
+						<!-- User name input -->
+						<div class="input-group" ng-class="{ 'has-error' : registerForm.name.$invalid && registerForm.name.$dirty, 'has-success' : registerForm.name.$valid && registerForm.name.$dirty}" ng-model-options="{ updateOn: 'blur' }">
+							<div class="input-group-addon"><i class="icon ion-person-add"></i></div>
+							<input type="text" name="name" ng-model="user.name" placeholder="Name" class="form-control" required autofocus ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength=6>
+						</div>
+						<p ng-show="registerForm.name.$invalid && registerForm.name.$dirty">Please enter your desired username. Username must be at least 6 characters long and contain only alphanumeric characters.</p>
+						<hr>
+						<!-- User email input -->
+						<div class="input-group" ng-class="{ 'has-error' : registerForm.email.$invalid && registerForm.email.$dirty, 'has-success' : registerForm.email.$valid && registerForm.email.$dirty}" ng-model-options="{ updateOn: 'blur' }">
+							<div class="input-group-addon"><i class="icon ion-at"></i></div>
+							<input type="email" name="email" ng-model="user.email" placeholder="E-mail address" class="form-control" required>
+						</div>
+						<p ng-show="registerForm.email.$invalid && registerForm.email.$dirty">Please enter a valid email address.</p>
+						<hr>
+						<!-- User password input -->
+						<div class="input-group" ng-class="{ 'has-error' : registerForm.password.$invalid && registerForm.password.$dirty, 'has-success' : registerForm.password.$valid && registerForm.password.$dirty}" ng-model-options="{ updateOn: 'blur' }">
+							<div class="input-group-addon"><i class="icon ion-locked"></i></div>
+							<input type="password" name="password" ng-model="user.password" placeholder="Password" class="form-control" required ng-minlength=6>
+						</div>
+						<p ng-show="registerForm.password.$invalid && registerForm.password.$dirty">Please enter a password at least 6 characters long.</p>
+						<br>
+						<!-- User password check -->
+						<div class="input-group" ng-class="{ 'has-error' : registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty, 'has-success' : registerForm.passwordCheck.$valid && registerForm.passwordCheck.$dirty}" ng-model-options="{ updateOn: 'blur' }">
+							<div class="input-group-addon"><i class="icon ion-alert"></i></div>
+							<input password-match="user.password" type="password" name="passwordCheck" ng-model="user.passwordCheck" placeholder="Confirm password" class="form-control" required>
+						</div>
+						<p ng-show="registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty">Passwords do not match.</p>
+						<br>
+						<!-- Button groupyur -->
+						<div class="center-block">
+							<input ng-disabled="registerForm.$invalid" type="submit" value="Register for free now!" class="btn btn-lg btn-round-lg btn-success">
+							or
+							<a href="#/login" role="button" class="btn btn-lg btn-round-lg btn-transparent btn-info">Click here to login</a>
+						</div>
+					</form>
+					<pre>{{user | json}}</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
