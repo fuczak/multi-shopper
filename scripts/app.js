@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'firebase', 'toaster'])
+var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'firebase', 'toaster', 'ngProgress'])
 	.constant('FURL', 'https://multi-shopper.firebaseio.com')
 	/* uncomment when authorization module is complete
 	.run(function($rootScope, $location) {
