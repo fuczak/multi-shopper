@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('AuthCtrl', ['$scope', function($scope) {
+app.controller('AuthCtrl', ['$scope', 'Auth', function($scope, Auth) {
 	$scope.register = function(user) {
-		alert(JSON.stringify(user))
+		Auth.register(user);
 	}
 }]);

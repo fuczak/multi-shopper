@@ -29,7 +29,7 @@
 						<p ng-show="registerForm.password.$invalid && registerForm.password.$dirty">Please enter a password at least 6 characters long.</p>
 						<br>
 						<!-- User password check -->
-						<div class="input-group" ng-class="{ 'has-error' : registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty, 'has-success' : registerForm.passwordCheck.$valid && registerForm.passwordCheck.$dirty}" ng-model-options="{ updateOn: 'blur' }">
+						<div class="input-group" ng-class="{ 'has-error' : registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty, 'has-success' : registerForm.passwordCheck.$valid && registerForm.passwordCheck.$dirty}">
 							<div class="input-group-addon"><i class="icon ion-alert"></i></div>
 							<input password-match="user.password" type="password" name="passwordCheck" ng-model="user.passwordCheck" placeholder="Confirm password" class="form-control" required>
 						</div>
@@ -42,7 +42,6 @@
 							<a href="#/login" role="button" class="btn btn-lg btn-round-lg btn-transparent btn-info">Click here to login</a>
 						</div>
 					</form>
-					<pre>{{user | json}}</pre>
 				</div>
 			</div>
 		</div>
