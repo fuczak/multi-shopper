@@ -1,8 +1,5 @@
 'use strict';
 
-app.controller('NavCtrl', ['$scope', function($scope) {
-	$scope.user = {
-		email: "prus.damian@gmail.com",
-		name: "Damian Prus"
-	}
+app.controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+	$scope.user = Auth.user;
 }]);

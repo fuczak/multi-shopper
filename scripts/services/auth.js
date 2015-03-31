@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Auth', ['FURL', '$firebaseAuth', function(FURL, $firebaseAuth) {
+app.factory('Auth', ['FURL', '$firebaseAuth', '$firebaseObject', function(FURL, $firebaseAuth, $firebaseObject) {
 
 	var ref = new Firebase(FURL);
 	var auth = $firebaseAuth(ref);
@@ -17,6 +17,7 @@ app.factory('Auth', ['FURL', '$firebaseAuth', function(FURL, $firebaseAuth) {
 			})
 			.then(function(data) {
 				return Auth.createProfile(data.uid, user);
+				console.log(data)
 			});
 		},
 		createProfile: function(uid, user) {
@@ -32,8 +33,22 @@ app.factory('Auth', ['FURL', '$firebaseAuth', function(FURL, $firebaseAuth) {
 				email: user.email,
 				password: user.password
 			});
-		}
+		}		
 	};
+	//Every time authentication state changes
+	auth.$onAuth(function(authData) {
+		if (authData) {
+			//if authentication data exists, get user profile and attach it to Auth.user object
+			angular.copy(authData, Auth.user);
+			Auth.user.profile = $firebaseObject(ref.child('profiles').child(authData.uid));
+			//if there is no authentication data, clear Auth.user object
+		} else {
+			if (Auth.user && Auth.user.profile) {
+				Auth.user.profile.$destroy();
+			}
+			angular.copy({}, Auth.user);
+		}
+	});
 
 	return Auth;
 }]);
