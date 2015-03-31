@@ -1,4 +1,13 @@
 <div ng-controller="NavCtrl">
-	<img class="img-circle" gravatar-src-once="user.profile.email">
-	<span>Hello, {{user.profile.name}}!</span>
+	<div class="nav-profile" ng-if="!!user.provider">
+		<img gravatar-src-once="user.profile.email" alt="Profile picture" class="img-circle center-block profile-picture">
+		<p class="text-muted text-center text-white"><small><em>{{user.profile.email}}</em></small></p>
+		<hr>
+	</div>
+	<div ng-if="!!user.provider">
+		Logged in
+	</div>
+	<div ng-if="!user.provider">
+		Not logged in
+	</div>
 </div>

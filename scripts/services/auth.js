@@ -17,7 +17,6 @@ app.factory('Auth', ['FURL', '$firebaseAuth', '$firebaseObject', function(FURL, 
 			})
 			.then(function(data) {
 				return Auth.createProfile(data.uid, user);
-				console.log(data)
 			});
 		},
 		createProfile: function(uid, user) {
@@ -33,10 +32,14 @@ app.factory('Auth', ['FURL', '$firebaseAuth', '$firebaseObject', function(FURL, 
 				email: user.email,
 				password: user.password
 			});
-		}		
+		},
+		logout: function() {
+			auth.$unauth();
+		}	
 	};
 	//Every time authentication state changes
 	auth.$onAuth(function(authData) {
+		console.log('auth change')
 		if (authData) {
 			//if authentication data exists, get user profile and attach it to Auth.user object
 			angular.copy(authData, Auth.user);

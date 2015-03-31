@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5 {
 p {
 	font-size: 16px;
 }
+.text-white {
+	color: #fff !important;
+}
 snap-content {
 	background: url(../images/main_bg.jpeg) no-repeat center center;
 	background-size: cover;
@@ -30,6 +33,12 @@ ng-view {
 	color: white;
 	cursor: pointer;
 	padding: 20px;
+}
+.profile-picture {
+	padding: 20px 0;
+}
+.nav-profile {
+	background-color: #5cb85c;
 }
 .panel {
 	background-color: rgba(0,0,0,0.5);
