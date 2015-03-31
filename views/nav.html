@@ -1,13 +1,37 @@
 <div ng-controller="NavCtrl">
 	<div class="nav-profile" ng-if="!!user.provider">
-		<img gravatar-src-once="user.profile.email" alt="Profile picture" class="img-circle center-block profile-picture">
+		<a href="#/profile"><img gravatar-src-once="user.profile.email" alt="Profile picture" class="img-circle center-block profile-picture"></a>
 		<p class="text-muted text-center text-white"><small><em>{{user.profile.email}}</em></small></p>
-		<hr>
 	</div>
+	<!-- Display if user is looged in -->
 	<div ng-if="!!user.provider">
-		Logged in
+		<ul class="nav">
+			<li>
+				<a class="active" href="#/plan">Plan a week!</a>
+			</li>
+			<li>
+				<a href="#/fridge">Fridge stock</a>
+			</li>
+			<li>
+				<a href="#/browse">Browse recipes</a>
+			</li>
+			<li>
+				<a href="#/add-recipe">Add a recipe</a>
+			</li>
+			<hr>
+			<li>
+				<a href="#/profile">Profile</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" ng-click="logout()" snap-close>Log out</a>
+			</li>
+		</ul>
 	</div>
+	<!-- Display if user is not logged in -->
 	<div ng-if="!user.provider">
-		Not logged in
+		<ul class="nav">
+			<li><a href="#/register">Register</a></li>
+			<li><a href="#/login">Log in</a></li>
+		</ul>
 	</div>
 </div>

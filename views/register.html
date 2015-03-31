@@ -30,7 +30,7 @@
 						<br>
 						<!-- User password check -->
 						<div class="input-group" ng-class="{ 'has-error' : registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty, 'has-success' : registerForm.passwordCheck.$valid && registerForm.passwordCheck.$dirty}">
-							<div class="input-group-addon"><i class="icon ion-alert"></i></div>
+							<div class="input-group-addon"><i class="icon ion-alert-circled"></i></div>
 							<input password-match="user.password" type="password" name="passwordCheck" ng-model="user.passwordCheck" placeholder="Confirm password" class="form-control" required>
 						</div>
 						<p ng-show="registerForm.passwordCheck.$invalid && registerForm.passwordCheck.$dirty">Passwords do not match.</p>

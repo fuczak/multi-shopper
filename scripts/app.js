@@ -11,8 +11,9 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 		});
 	})
 	*/
-	.run(['$rootScope', '$timeout', '$window', function($rootScope, $timeout, $window) {
+	.run(['$rootScope', '$timeout', '$window', 'snapRemote', function($rootScope, $timeout, $window, snapRemote) {
 		$rootScope.$on('$routeChangeSuccess', function() {
+			snapRemote.close();
 			$timeout(function() {
 				$window.scrollTo(0,0);
 			}, 500);
@@ -31,11 +32,17 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 				templateUrl: 'views/register.html',
 				controller: 'AuthCtrl'
 			})
+			.when('/plan', {
+				templateUrl: 'views/plan.html'
+			})
+			.when('/fridge', {
+				templateUrl: 'views/fridge'
+			})
 			.when('/browse', {
 				templateUrl: 'views/browse.html'
 			})
-			.when('/dashboard', {
-				templateUrl: 'views/dashboard.html'
+			.when('/add-recipe', {
+				templateUrl: 'views/add-recipe.html'
 			})
 			.otherwise({
 				redirectTo: '/'
