@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'firebase', 'toaster', 'ngProgress'])
+var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'firebase', 'toaster', 'ngProgress', 'ngAnimate'])
 	.constant('FURL', 'https://multi-shopper.firebaseio.com')
 	/* uncomment when authorization module is complete
 	.run(function($rootScope, $location) {
@@ -11,6 +11,13 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 		});
 	})
 	*/
+	.run(['$rootScope', '$timeout', '$window', function($rootScope, $timeout, $window) {
+		$rootScope.$on('$routeChangeSuccess', function() {
+			$timeout(function() {
+				$window.scrollTo(0,0);
+			}, 500);
+		});
+	}])
 	.config(['$routeProvider', 'snapRemoteProvider', 'gravatarServiceProvider', function($routeProvider, snapRemoteProvider, gravatarServiceProvider) {
 		$routeProvider
 			.when('/', {
