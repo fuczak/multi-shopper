@@ -75,6 +75,7 @@ snap-content {
   margin: 0 auto;
   top: 120px;
   z-index: -1;
+  width: 100%;
 }
 .view.ng-leave {
   -webkit-animation-name: fadeOutUp;
