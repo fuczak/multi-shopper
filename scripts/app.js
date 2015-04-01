@@ -36,13 +36,14 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 				templateUrl: 'views/plan.html'
 			})
 			.when('/fridge', {
-				templateUrl: 'views/fridge'
+				templateUrl: 'views/fridge.html'
 			})
 			.when('/browse', {
 				templateUrl: 'views/browse.html'
 			})
 			.when('/add-recipe', {
-				templateUrl: 'views/add-recipe.html'
+				templateUrl: 'views/add-recipe.html',
+				controller: 'RecipeCtrl'
 			})
 			.otherwise({
 				redirectTo: '/'

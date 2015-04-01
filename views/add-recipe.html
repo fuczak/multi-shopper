@@ -1,7 +1,58 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h2 class="text-center">Add a recipe you discovered!</h2>
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2 class="text-center">Add a recipe you discovered!</h2>
+				</div>
+				<div class="panel-body">
+					<form ng-submit="addRecipe(recipe)" name="recipeForm" novalidate>
+						<!-- Recipe name -->
+						<div class="input-group">
+							<div class="input-group-addon"><i class="icon ion-quote"></i></div>
+							<input type="text" name="name" ng-model="recipe.name" placeholder="Name of the recipe" class="form-control">
+						</div>
+						<hr>
+						<!-- Recipe tags -->
+						<div class="row">
+							<!-- Preparation time -->
+							<div class="col-md-4">
+								<p>Preparation time</p>
+								<div class="input-group">
+									<div class="input-group-addon"><i class="icon ion-settings"></i></div>
+									<input id="prepTime" type="number" name="prepTime" ng-model="recipe.prepTime" placeholder="Preparation time" class="form-control">
+									<div class="input-group-addon">min.</div>
+								</div>
+							</div>
+							<!-- Cooking time -->
+							<div class="col-md-4">
+								<p>Cooking time</p>
+								<div class="input-group">
+									<div class="input-group-addon"><i class="icon ion-ios-timer-outline"></i></div>
+									<input type="number" name="cookTime" ng-model="recipe.cookTime" placeholder="Cooking time" class="form-control">
+									<div class="input-group-addon">min.</div>
+								</div>
+							</div>
+							<!-- Portion size -->
+							<div class="col-md-4">
+								<p>Portion size</p>
+								<div class="input-group">
+									<div class="input-group-addon"><i class="icon ion-ios-people"></i></div>
+									<input type="number" name="prepTime" ng-model="recipe.portionSize" placeholder="Portion size" class="form-control">
+									<div class="input-group-addon">ppl.</div>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<!-- Cooking methods -->
+						<div class="input-group">
+							<div class="input-group-addon"><i class="icon ion-ios-pricetags"></i></div>
+							<input type="number" name="prepTime" ng-model="recipe.prepTime" placeholder="Tags" class="form-control">
+						</div>
+					</form>
+				</div>
+				<pre>{{recipe | json}}</pre>		
+			</div>
 		</div>
 	</div>
 </div>
