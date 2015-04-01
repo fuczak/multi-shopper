@@ -45,6 +45,12 @@ snap-content {
 	border-radius: 0;
 	color: #fff;
 }
+.ingredient-form span.ui-select-match {
+  /*display: none;*/
+}
+.added-ingredient-list .input-group-addon {
+  width: 35%;
+}
 .btn {
 	border: 1px solid #fff;
 	transiton: all 0.3s ease-out;

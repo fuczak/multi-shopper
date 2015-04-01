@@ -59,6 +59,32 @@
 						<hr>
 						<!-- Ingredients -->
 						<h3>Ingredients</h3>
+						<div class="row">
+							<div class="col-md-4 ingredient-form">
+								<ui-select multiple ng-model="recipe.ingredients" theme="bootstrap" ng-disabled="disabled">
+									<ui-select-match placeholder="Select ingredients">{{$item.name}}</ui-select-match>
+									<ui-select-choices repeat="ingredient in availableIngredients | filter:$select.search">
+										<p class="text-white">{{ingredient.name}}</p>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+							<div class="col-md-8">
+								<div ng-repeat="addedIngredient in recipe.ingredients" class="added-ingredient-list">
+									<!-- Fill name -->
+									<div class="input-group">
+										<div class="input-group-addon">{{addedIngredient.name}}</div>
+										<input type="number" name="prepTime" ng-model="addedIngredient.quantity" placeholder="Enter quantity" class="form-control">
+										<div class="input-group-addon">{{addedIngredient.unit}}</div>
+									</div>
+									<br>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<!-- Button group -->
+						<div class="text-center">
+							<input ng-disabled="recipeForm.$invalid" type="submit" value="Add your recipe" class="btn btn-lg btn-round-lg btn-success">
+						</div>
 					</form>
 				</div>
 			<pre>{{recipe | json}}</pre>
