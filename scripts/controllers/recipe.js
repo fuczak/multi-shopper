@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('RecipeCtrl', ['$scope', function($scope) {
+app.controller('RecipeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
 	$scope.recipe = {
 		ingredients: []
 	};
@@ -10,5 +10,12 @@ app.controller('RecipeCtrl', ['$scope', function($scope) {
   		{ name: 'milk', unit: 'ml', quantity: null },
   		{ name: 'carrots', unit: 'pcs', quantity: null}
   	];
-  	
+  	$scope.addRecipe = function(recipe) {
+  		Recipe.addRecipe(recipe)
+  		.then(function(data) {
+  			toaster.pop('success', data.message)
+  		},function(error) {
+  			toaster.pop('alert', error.message)
+  		});
+  	}
 }]);
