@@ -25,6 +25,7 @@
     "angularfire": "~1.0.0",
     "angularjs-toaster": "~0.4.11",
     "ngprogress": "~1.0.7",
-    "animate.css": "~3.2.6"
+    "animate.css": "~3.2.6",
+    "angular-ui-select": "~0.11.2"
   }
 }

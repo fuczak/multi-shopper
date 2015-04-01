@@ -3,11 +3,12 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel">
 				<div class="panel-heading">
-					<h2 class="text-center">Add a recipe you discovered!</h2>
+					<h1 class="text-center">Add a recipe you discovered!</h1>
 				</div>
 				<div class="panel-body">
 					<form ng-submit="addRecipe(recipe)" name="recipeForm" novalidate>
 						<!-- Recipe name -->
+						<h3>Name your recipe</h3>
 						<div class="input-group">
 							<div class="input-group-addon"><i class="icon ion-quote"></i></div>
 							<input type="text" name="name" ng-model="recipe.name" placeholder="Name of the recipe" class="form-control">
@@ -17,7 +18,7 @@
 						<div class="row">
 							<!-- Preparation time -->
 							<div class="col-md-4">
-								<p>Preparation time</p>
+								<h3>Preparation time</h3>
 								<div class="input-group">
 									<div class="input-group-addon"><i class="icon ion-settings"></i></div>
 									<input id="prepTime" type="number" name="prepTime" ng-model="recipe.prepTime" placeholder="Preparation time" class="form-control">
@@ -26,7 +27,7 @@
 							</div>
 							<!-- Cooking time -->
 							<div class="col-md-4">
-								<p>Cooking time</p>
+								<h3>Cooking time</h3>
 								<div class="input-group">
 									<div class="input-group-addon"><i class="icon ion-ios-timer-outline"></i></div>
 									<input type="number" name="cookTime" ng-model="recipe.cookTime" placeholder="Cooking time" class="form-control">
@@ -35,7 +36,7 @@
 							</div>
 							<!-- Portion size -->
 							<div class="col-md-4">
-								<p>Portion size</p>
+								<h3>Portion size</h3>
 								<div class="input-group">
 									<div class="input-group-addon"><i class="icon ion-ios-people"></i></div>
 									<input type="number" name="prepTime" ng-model="recipe.portionSize" placeholder="Portion size" class="form-control">
@@ -45,14 +46,23 @@
 						</div>
 						<hr>
 						<!-- Cooking methods -->
+						<h3>Used cooking methods</h3>
 						<div class="input-group">
-							<div class="input-group-addon"><i class="icon ion-ios-pricetags"></i></div>
-							<input type="number" name="prepTime" ng-model="recipe.prepTime" placeholder="Tags" class="form-control">
+							<div class="input-group-addon"><i class="icon ion-pricetags"></i></div>
+							<ui-select multiple ng-model="recipe.tags" theme="bootstrap" ng-disabled="disabled">
+								<ui-select-match placeholder="Select methods">{{$item}}</ui-select-match>
+								<ui-select-choices repeat="tag in availableTags | filter:$select.search">
+									<p class="text-white">{{tag}}</p>
+								</ui-select-choices>
+							</ui-select>
 						</div>
+						<hr>
+						<!-- Ingredients -->
+						<h3>Ingredients</h3>
 					</form>
 				</div>
-				<pre>{{recipe | json}}</pre>		
-			</div>
+			<pre>{{recipe | json}}</pre>
 		</div>
 	</div>
+</div>
 </div>

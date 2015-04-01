@@ -39,7 +39,6 @@ app.factory('Auth', ['FURL', '$firebaseAuth', '$firebaseObject', function(FURL, 
 	};
 	//Every time authentication state changes
 	auth.$onAuth(function(authData) {
-		console.log('auth change')
 		if (authData) {
 			//if authentication data exists, get user profile and attach it to Auth.user object
 			angular.copy(authData, Auth.user);
