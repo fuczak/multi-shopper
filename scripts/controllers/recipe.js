@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('RecipeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
+app.controller('RecipeCtrl', ['$scope', 'Recipe', 'toaster', 'ngProgress', function($scope, Recipe, toaster, ngProgress) {
 	$scope.recipe = {
 		ingredients: []
 	};
@@ -11,11 +11,15 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
   		{ name: 'carrots', unit: 'pcs', quantity: null}
   	];
   	$scope.addRecipe = function(recipe) {
-  		Recipe.addRecipe(recipe)
-  		.then(function(data) {
-  			toaster.pop('success', data.message)
+  		ngProgress.start();
+  		//angular.copy is a hack to remove $$hasKey from ingredients array
+  		Recipe.addRecipe(angular.copy(recipe))
+  		.then(function() {
+  			ngProgress.complete();
+  			toaster.pop('success', 'ok');
   		},function(error) {
-  			toaster.pop('alert', error.message)
+  			ngProgress.complete();
+  			toaster.pop('alert', error.message, 'not ok')
   		});
   	}
 }]);

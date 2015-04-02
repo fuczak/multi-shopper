@@ -69,7 +69,7 @@
 								</ui-select>
 							</div>
 							<div class="col-md-8">
-								<div ng-repeat="addedIngredient in recipe.ingredients" class="added-ingredient-list">
+								<div ng-repeat="addedIngredient in recipe.ingredients track by $index" class="added-ingredient-list">
 									<!-- Fill name -->
 									<div class="input-group">
 										<div class="input-group-addon">{{addedIngredient.name}}</div>
@@ -88,6 +88,7 @@
 					</form>
 				</div>
 			<pre>{{recipe | json}}</pre>
+			<pre>{{user | json}}</pre>
 		</div>
 	</div>
 </div>

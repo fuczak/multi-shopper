@@ -1,18 +1,12 @@
 'use strict';
 
-app.factory('Recipe', ['FURL', function(FURL) {
+app.factory('Recipe', ['FURL', 'Auth', '$firebaseArray', function(FURL, Auth, $firebaseArray) {
 	var ref = new Firebase(FURL);
 
 	var Recipe = {
 		addRecipe: function(recipe) {
-			for(var object in recipe.ingredients) {
-				recipe.ingredients[object] = {
-					object: recipe.ingredients[object]
-				}
-			}
-			ref.child('recipes').push(recipe, function(data) {
-				console.log(data);
-			});
+			recipe.author = Auth.user.profile;
+			return $firebaseArray(ref.child('user_recipes')).$add(recipe);
 		}
 	}
 
