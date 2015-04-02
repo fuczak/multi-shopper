@@ -21,5 +21,6 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'toaster', 'ngProgress', funct
   			ngProgress.complete();
   			toaster.pop('alert', error.message, 'not ok')
   		});
-  	}
+  	};
+  	$scope.recipes = Recipe.defaultRecipes;
 }]);

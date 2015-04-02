@@ -1,0 +1,172 @@
+{
+	"default_recipes": [
+		{
+			"name": "Chicken soup",
+			"prepTime": 10,
+			"cookTime": 105,
+			"tags": ["Boil", "Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "entrecote",
+					"quantity": 125,
+					"unit": "g"
+				},
+				{
+					"name": "water",
+					"quantity": 2,
+					"unit": "l"
+				},
+				{
+					"name": "broth",
+					"quantity": 125,
+					"unit": "g"
+				},
+				{
+					"name": "carrot",
+					"quantity": 1,
+					"unit": "-"
+				},
+				{
+					"name": "onion",
+					"quantity": 1,
+					"unit": "-"
+				},
+				{
+					"name": "parsley",
+					"quantity": 1,
+					"unit": "-"
+				},
+				{
+					"name": "celery",
+					"quantity": 1,
+					"unit": "pcs"
+				},
+				{
+					"name": "garlic",
+					"quantity": 1,
+					"unit": "clove"
+				},
+				{
+					"name": "leek",
+					"quantity": 0.5,
+					"unit": "-"
+				},
+				{
+					"name": "salt",
+					"quantity": 2,
+					"unit": "tsp."
+				},
+				{
+					"name": "vegeta",
+					"quantity": 1,
+					"unit": "tsp."
+				},
+				{
+					"name": "pepper",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "parsley leaves",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "lavage",
+					"quantity": null,
+					"unit": null
+				}
+			]
+		},
+		{
+			"name": "Borsch",
+			"prepTime": 15,
+			"cookTime": 60,
+			"tags": ["Fry", "Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "chicken breast",
+					"quantity": 300,
+					"unit": "g"
+				},
+				{
+					"name": "carrot",
+					"quantity": 2,
+					"unit": "-"
+				},
+				{
+					"name": "onion",
+					"quantity": 2,
+					"unit": "-"
+				},
+				{
+					"name": "beetroot",
+					"quantity": 2,
+					"unit": "-"
+				},
+				{
+					"name": "tomatoes",
+					"quantity": 2,
+					"unit": "-"
+				},
+				{
+					"name": "potatoes",
+					"quantity": 4,
+					"unit": "-"
+				},
+				{
+					"name": "cabbage",
+					"quantity": 200,
+					"unit": "g"
+				},
+				{
+					"name": "garlic",
+					"quantity": 2,
+					"unit": "clove"
+				},
+				{
+					"name": "lemon juice",
+					"quantity": 2,
+					"unit": "tsp."
+				},
+				{
+					"name": "olive oil",
+					"quantity": 1,
+					"unit": "tbsp."
+				},
+				{
+					"name": "tomato paste",
+					"quantity": 2,
+					"unit": "tbsp."
+				},
+				{
+					"name": "herbs",
+					"quantity": 2,
+					"unit": "tbsp."
+				},
+				{
+					"name": "bay leaf",
+					"quantity": 1,
+					"unit": "-"
+				},
+				{
+					"name": "water",
+					"quantity": 1.1,
+					"unit": "l"
+				}
+			]
+		}
+	],
+	"ingredients": [
+		{
+			"name": "carrots",
+			"unit": "-"
+		},
+		{
+			"name": "potatoes",
+			"unit": "-"
+		}
+	]
+}
