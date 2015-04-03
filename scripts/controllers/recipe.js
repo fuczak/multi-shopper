@@ -1,6 +1,7 @@
 'use strict';
 
 app.controller('RecipeCtrl', ['$scope', 'Recipe', 'toaster', 'ngProgress', function($scope, Recipe, toaster, ngProgress) {
+	$scope._ = _;
 	$scope.recipe = {
 		ingredients: []
 	};
@@ -16,11 +17,23 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'toaster', 'ngProgress', funct
   		Recipe.addRecipe(angular.copy(recipe))
   		.then(function() {
   			ngProgress.complete();
-  			toaster.pop('success', 'ok');
+  			toaster.pop('success', 'Your recipe has been added!');
   		},function(error) {
   			ngProgress.complete();
-  			toaster.pop('alert', error.message, 'not ok')
+  			toaster.pop('alert', error.message)
   		});
   	};
   	$scope.recipes = Recipe.defaultRecipes;
+  	//The code below is only for generating ingredient list as a reference
+  	$scope.test = [];
+  	$scope.evalIngredients = function() {
+  		for (var i = 0; i < $scope.recipes.length; i++) {
+  			for (var j = 0; j < $scope.recipes[i].ingredients.length; j++) {
+  				$scope.test.push($scope.recipes[i].ingredients[j].name)
+  			}
+  		} 
+  		console.log($scope.test.length);
+  		$scope.uniqueTest = _.uniq($scope.test);
+  		console.log($scope.uniqueTest.length)
+  	};
 }]);

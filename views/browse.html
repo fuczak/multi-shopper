@@ -19,7 +19,7 @@
 									<div class="well">
 										<h4>Ingredients</h4>
 										<ul class="list-group">
-											<li class="list-group-item" ng-repeat="ingredient in recipe.ingredients">
+											<li ng-repeat="ingredient in recipe.ingredients">
 												<p><strong>{{ingredient.quantity}}</strong> {{ingredient.unit}} <em>{{ingredient.name}}</em></p>
 											</li>
 										</ul>
@@ -29,6 +29,17 @@
 						</div>
 					</div>
 				</div>
+				<button class="btn" ng-click="evalIngredients()">Ingred</button>
+				<div class="row">
+					<div class="col-md-6">
+						<pre>{{test | json}}</pre>
+					</div>
+					<div class="col-md-6">
+						<pre>{{uniqueTest | json}}</pre>
+					</div>
+				</div>
+				<hr>
+				<pre>{{recipes | json}}</pre>
 			</div>
 		</div>
 	</div>

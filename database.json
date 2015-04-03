@@ -18,24 +18,24 @@
 					"unit": "l"
 				},
 				{
-					"name": "broth",
+					"name": "broth/turkey breast",
 					"quantity": 125,
 					"unit": "g"
 				},
 				{
 					"name": "carrot",
 					"quantity": 1,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "onion",
 					"quantity": 1,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "parsley",
 					"quantity": 1,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "celery",
@@ -50,7 +50,7 @@
 				{
 					"name": "leek",
 					"quantity": 0.5,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "salt",
@@ -94,27 +94,27 @@
 				{
 					"name": "carrot",
 					"quantity": 2,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "onion",
 					"quantity": 2,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "beetroot",
 					"quantity": 2,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "tomatoes",
 					"quantity": 2,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "potatoes",
 					"quantity": 4,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "cabbage",
@@ -142,19 +142,315 @@
 					"unit": "tbsp."
 				},
 				{
-					"name": "herbs",
+					"name": "mixed herbs",
 					"quantity": 2,
 					"unit": "tbsp."
 				},
 				{
 					"name": "bay leaf",
 					"quantity": 1,
-					"unit": "-"
+					"unit": null
 				},
 				{
 					"name": "water",
 					"quantity": 1.1,
 					"unit": "l"
+				},
+				{
+					"name": "salt",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "pepper",
+					"quantity": null,
+					"unit": null
+				}
+			]
+		},
+		{
+			"name": "Meatball soup",
+			"prepTime": 10,
+			"cookTime": 45,
+			"tags": ["Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "onion",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "minced meat",
+					"quantity": 250,
+					"unit": "g"
+				},
+				{
+					"name": "potatoes",
+					"quantity": 2,
+					"unit": null
+				},
+				{
+					"name": "rice",
+					"quantity": 50,
+					"unit": "g"
+				},
+				{
+					"name": "egg",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "water",
+					"quantity": 2,
+					"unit": "l"
+				},
+				{
+					"name": "green pepper",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "carrot",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "broth",
+					"quantity": 300,
+					"unit": "ml"
+				},
+				{
+					"name": "wine vinegar",
+					"quantity": 4,
+					"unit": "tbsp."
+				},
+				{
+					"name": "tomato paste",
+					"quantity": 2,
+					"unit": "tbsp"
+				},
+				{
+					"name": "salt",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "pepper",
+					"quantity": null,
+					"unit": null
+				}
+			]
+		},
+		{
+			"name": "Tomato soup",
+			"prepTime": 10,
+			"cookTime": 105,
+			"tags": ["Boil", "Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "entrecote",
+					"quantity": 125,
+					"unit": "g"
+				},
+				{
+					"name": "broth/turkey breast",
+					"quantity": 125,
+					"unit": "g"
+				},
+				{
+					"name": "water",
+					"quantity": 2,
+					"unit": "l"
+				},
+				{
+					"name": "carrot",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "onion",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "parsley",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "celery",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "garlic",
+					"quantity": 1,
+					"unit": "clove"
+				},
+				{
+					"name": "leek",
+					"quantity": 0.5,
+					"unit": null
+				},
+				{
+					"name": "salt",
+					"quantity": 2,
+					"unit": "tsp."
+				},
+				{
+					"name": "vegeta",
+					"quantity": 2,
+					"unit": "tsp."
+				},
+				{
+					"name": "pepper",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "tomato paste",
+					"quantity": 200,
+					"unit": "g"
+				},
+				{
+					"name": "parsley leaves",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "lavage",
+					"quantity": null,
+					"unit": null
+				}
+			]
+		},
+		{
+			"name": "Pasta Bolognese",
+			"prepTime": 10,
+			"cookTime": 43,
+			"tags": ["Fry", "Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "olive oil",
+					"quantity": 1,
+					"unit": "tbsp."
+				},
+				{
+					"name": "onion",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "carrot",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "stick of celery",
+					"quantity": 1,
+					"unit": null
+				},
+				{
+					"name": "mushrooms",
+					"quantity": 70,
+					"unit": "g"
+				},
+				{
+					"name": "lean minced beef",
+					"quantity": 250,
+					"unit": "g"
+				},
+				{
+					"name": "tomato paste",
+					"quantity": 2,
+					"unit": "tbsp."
+				},
+				{
+					"name": "tinned chopped tomatoes",
+					"quantity": 400,
+					"unit": "g"
+				},
+				{
+					"name": "mixed herbs",
+					"quantity": 2,
+					"unit": "tsp."
+				},
+				{
+					"name": "garlic",
+					"quantity": 1,
+					"unit": "clove"
+				},
+				{
+					"name": "penne pasta",
+					"quantity": 250,
+					"unit": "g"
+				},
+				{
+					"name": "water",
+					"quantity": 0.27,
+					"unit": "l"
+				},
+				{
+					"name": "red wine",
+					"quantity": 70,
+					"unit": "ml"
+				}
+			]
+		},
+		{
+			"name": "Spaghetti carbonara",
+			"prepTime": 10,
+			"cookTime": 35,
+			"tags": ["Fry", "Stew"],
+			"portionSize": 4,
+			"ingredients": [
+				{
+					"name": "olive oil",
+					"quantity": 1,
+					"unit": "tbsp."
+				},
+				{
+					"name": "onion",
+					"quantity": 0.5,
+					"unit": null
+				},
+				{
+					"name": "garlic",
+					"quantity": 1,
+					"unit": "clove"
+				},
+				{
+					"name": "spaghetti",
+					"quantity": 200,
+					"unit": "g"
+				},
+				{
+					"name": "bacon",
+					"quantity": 100,
+					"unit": "g"
+				},
+				{
+					"name": "double cream",
+					"quantity": 180,
+					"unit": "ml"
+				},
+				{
+					"name": "water",
+					"quantity": 0.54,
+					"unit": "l"
+				},
+				{
+					"name": "salt",
+					"quantity": null,
+					"unit": null
+				},
+				{
+					"name": "pepper",
+					"quantity": null,
+					"unit": null
 				}
 			]
 		}
@@ -162,11 +458,11 @@
 	"ingredients": [
 		{
 			"name": "carrots",
-			"unit": "-"
+			"unit": null
 		},
 		{
 			"name": "potatoes",
-			"unit": "-"
+			"unit": null
 		}
 	]
 }
