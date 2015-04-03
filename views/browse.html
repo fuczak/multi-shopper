@@ -12,10 +12,10 @@
 								<h3>{{recipe.name}} - <small class="muted">{{recipe.prepTime}} + {{recipe.cookTime}} minutes</small></h3>
 								<hr>
 								<span class="badge" ng-repeat="tag in recipe.tags"><p>{{tag}}</p></span>
-								<button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								<button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#recipe{{$index}}" aria-expanded="false" aria-controls="collapseExample">
 								  Show more <span class="caret"></span>
 								</button>
-								<div class="collapse" id="collapseExample">
+								<div class="collapse" id="recipe{{$index}}">
 									<div class="well">
 										<h4>Ingredients</h4>
 										<ul class="list-group">
