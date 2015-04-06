@@ -34,7 +34,8 @@ snap-content {
   margin-left: 40px;
 }
 .profile-mail {
-  display: inline;
+  position: relative;
+  padding: 10px;
 }
 .panel {
 	background-color: rgba(0,0,0,0.5);

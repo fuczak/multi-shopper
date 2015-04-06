@@ -5,9 +5,7 @@ app.service('Ingredient', ['FURL', '$firebaseArray', function(FURL, $firebaseArr
 	var ref = new Firebase(FURL);
 
 	var Ingredient = {
-		defaultIngredients: function() {
-			$firebaseArray(ref.child('default_ingredients'));
-		}
+		defaultIngredients: $firebaseArray(ref.child('ingredients'))
 	};
 
 	return Ingredient;
