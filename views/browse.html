@@ -5,13 +5,18 @@
 				<div class="panel-heading">
 					<h2 class="text-center">Browse all recipes</h2>
 				</div>
+				<hr>
 				<div class="panel-body">
+				<div class="input-group">
+					<div class="input-group-addon"><i class="icon ion-at"></i></div>
+					<input type="text" ng-model="searchText" placeholder="Search..." class="form-control">
+				</div>
 					<div class="row">
-						<div class="col-md-3" ng-repeat="recipe in recipes track by $index">
+						<div class="col-md-3 recipe-list-card" ng-repeat="recipe in recipes | filter:searchText">
 							<div class="well">
 								<h3>{{recipe.name}} - <small class="muted">{{recipe.prepTime}} + {{recipe.cookTime}} minutes</small></h3>
 								<hr>
-								<span class="badge" ng-repeat="tag in recipe.tags"><p>{{tag}}</p></span>
+								<span class="label label-info label-custom" ng-repeat="tag in recipe.tags | filter:searchText"><p>{{tag}}</p></span>
 								<button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#recipe{{$index}}" aria-expanded="false" aria-controls="collapseExample">
 								  Show more <span class="caret"></span>
 								</button>

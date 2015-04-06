@@ -86,7 +86,7 @@ ul.nav {
   z-index: -1;
   width: 100%;
 }
-.view.ng-leave, .profile-bar.ng-leave {
+.view.ng-leave, .profile-bar.ng-leave, .recipe-list-card.ng-leave {
   -webkit-animation-name: fadeOutUp;
   -moz-animation-name: fadeOutUp;
   -ms-animation-name: fadeOutUp;
@@ -114,7 +114,7 @@ ul.nav {
   backface-visibility: hidden;
 }
 
-.view.ng-enter, .profile-bar.ng-enter {
+.view.ng-enter, .profile-bar.ng-enter, .recipe-list-card.ng-enter {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -378,4 +378,13 @@ ul.nav {
 }
 .material--burger {
   /*margin: 90px auto;*/
+}
+.label-custom {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 19px;
+}
+.label-custom p {
+  margin: 0;
 }

@@ -7,9 +7,9 @@ app.factory('Recipe', ['FURL', 'Auth', '$firebaseArray', function(FURL, Auth, $f
 	var Recipe = {
 		defaultRecipes: $firebaseArray(ref.child('default_recipes')),
 		userRecipes: $firebaseArray(ref.child('user_recipes')),
-		addRecipe: function(recipe) {
-			recipe.author = Auth.user.profile;
-			return $firebaseArray(ref.child('user_recipes')).$add(recipe);
+		addRecipe: function(recipe, user) {
+			recipe.author = user.profile;
+			return $firebaseArray(ref.child('user_recipes').child(user.uid)).$add(recipe);
 		}
 	}
 
