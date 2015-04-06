@@ -23,27 +23,29 @@ snap-content {
 }
 #loading-bar {
 	z-index: 99;
-}
-.ion-navicon {
-	position: fixed;
-	font-size: 50px;
-	top: 20px;
-	left: 20px;
-	color: white;
-	cursor: pointer;
-	padding: 20px;
+  color: yellow;
 }
 .profile-picture {
-	padding: 20px 0;
+  height: 40px;
 }
-.nav-profile {
-	background-color: #5cb85c;
-	padding: 30px 0;
+.profile-bar {
+  display: inline-block;
+  height: 60px;
+  margin-left: 40px;
+}
+.profile-mail {
+  display: inline;
 }
 .panel {
 	background-color: rgba(0,0,0,0.5);
 	border-radius: 0;
 	color: #fff;
+}
+nav.navbar {
+  height: 60px;
+}
+ul.nav {
+  margin-top: 60px;
 }
 .ingredient-form span.ui-select-match {
   /*display: none;*/
@@ -83,7 +85,7 @@ snap-content {
   z-index: -1;
   width: 100%;
 }
-.view.ng-leave {
+.view.ng-leave, .profile-bar.ng-leave {
   -webkit-animation-name: fadeOutUp;
   -moz-animation-name: fadeOutUp;
   -ms-animation-name: fadeOutUp;
@@ -111,7 +113,7 @@ snap-content {
   backface-visibility: hidden;
 }
 
-.view.ng-enter {
+.view.ng-enter, .profile-bar.ng-enter {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -142,4 +144,237 @@ snap-content {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+/*BUTTON*/
+.material--burger {
+  cursor: pointer;
+  padding: 12.5px;
+  position: relative;
+  width: 50px;
+  height: 60px;
+}
+.material--burger:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  background-color: #445566;
+  -webkit-animation: material-menu-background 300ms ease-in-out forwards;
+          animation: material-menu-background 300ms ease-in-out forwards;
+}
+.material--burger span {
+  top: 50%;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: material-menu;
+          animation-name: material-menu;
+}
+.material--burger span, .material--burger span:before, .material--burger span:after {
+  width: 25px;
+  background-color: #fff;
+  height: 3px;
+  position: absolute;
+  z-index: 525;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-transition: background-color 300ms ease-in-out;
+          transition: background-color 300ms ease-in-out;
+}
+.material--burger span:before, .material--burger span:after {
+  content: '';
+  display: block;
+}
+.material--burger span:before {
+  /*top: 300%;*/
+  -webkit-transform-origin: right bottom;
+      -ms-transform-origin: right bottom;
+          transform-origin: right bottom;
+  -webkit-animation-name: material-menu-before;
+          animation-name: material-menu-before;
+}
+.material--burger span:after {
+  /*bottom: 300%;*/
+  -webkit-transform-origin: right top;
+      -ms-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-animation-name: material-menu-after;
+          animation-name: material-menu-after;
+}
+.material--burger.material--arrow:after {
+  -webkit-animation: material-arrow-background 300ms ease-in-out forwards;
+          animation: material-arrow-background 300ms ease-in-out forwards;
+}
+.material--burger.material--arrow span, .material--burger.material--arrow span:before, .material--burger.material--arrow span:after {
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  background-color: #fff;
+}
+.material--burger.material--arrow span {
+  -webkit-animation-name: material-arrow;
+          animation-name: material-arrow;
+}
+.material--burger.material--arrow span:before {
+  -webkit-animation-name: material-arrow-before;
+          animation-name: material-arrow-before;
+}
+.material--burger.material--arrow span:after {
+  -webkit-animation-name: material-arrow-after;
+          animation-name: material-arrow-after;
+}
+
+@-webkit-keyframes material-arrow-background {
+  100% {
+    -webkit-transform: rotate(180deg) scale(0);
+            transform: rotate(180deg) scale(0);
+  }
+}
+
+@keyframes material-arrow-background {
+  100% {
+    -webkit-transform: rotate(180deg) scale(0);
+            transform: rotate(180deg) scale(0);
+  }
+}
+@-webkit-keyframes material-menu-background {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+            transform: rotate(180deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes material-menu-background {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+            transform: rotate(180deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+@-webkit-keyframes material-arrow {
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+@keyframes material-arrow {
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes material-arrow-before {
+  100% {
+    top: 0;
+    -webkit-transform: rotate(-40deg) scaleX(0.7);
+            transform: rotate(-40deg) scaleX(0.7);
+  }
+}
+@keyframes material-arrow-before {
+  100% {
+    top: 0;
+    -webkit-transform: rotate(-40deg) scaleX(0.7);
+            transform: rotate(-40deg) scaleX(0.7);
+  }
+}
+@-webkit-keyframes material-arrow-after {
+  100% {
+    bottom: 0;
+    -webkit-transform: rotate(40deg) scaleX(0.7);
+            transform: rotate(40deg) scaleX(0.7);
+  }
+}
+@keyframes material-arrow-after {
+  100% {
+    bottom: 0;
+    -webkit-transform: rotate(40deg) scaleX(0.7);
+            transform: rotate(40deg) scaleX(0.7);
+  }
+}
+@-webkit-keyframes material-menu {
+  0% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes material-menu {
+  0% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes material-menu-before {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(-40deg) scaleX(0.7);
+            transform: rotate(-40deg) scaleX(0.7);
+  }
+  100% {
+    top: 300%;
+    -webkit-transform: rotate(0) scaleX(1);
+            transform: rotate(0) scaleX(1);
+  }
+}
+@keyframes material-menu-before {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(-40deg) scaleX(0.7);
+            transform: rotate(-40deg) scaleX(0.7);
+  }
+  100% {
+    top: 300%;
+    -webkit-transform: rotate(0) scaleX(1);
+            transform: rotate(0) scaleX(1);
+  }
+}
+@-webkit-keyframes material-menu-after {
+  0% {
+    bottom: 0;
+    -webkit-transform: rotate(40deg) scaleX(0.7);
+            transform: rotate(40deg) scaleX(0.7);
+  }
+  100% {
+    bottom: 300%;
+    -webkit-transform: rotate(0) scaleX(1);
+            transform: rotate(0) scaleX(1);
+  }
+}
+@keyframes material-menu-after {
+  0% {
+    bottom: 0;
+    -webkit-transform: rotate(40deg) scaleX(0.7);
+            transform: rotate(40deg) scaleX(0.7);
+  }
+  100% {
+    bottom: 300%;
+    -webkit-transform: rotate(0) scaleX(1);
+            transform: rotate(0) scaleX(1);
+  }
+}
+.material--burger {
+  /*margin: 90px auto;*/
 }

@@ -56,6 +56,6 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 		};
 		gravatarServiceProvider.defaults = {
 			'default': 'mm',
-			size: 50
+			size: 40
 		};
 	}]);

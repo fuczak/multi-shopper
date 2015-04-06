@@ -1,8 +1,4 @@
 <div ng-controller="NavCtrl">
-	<div class="nav-profile" ng-if="!!user.provider">
-		<a href="#/profile"><img gravatar-src-once="user.profile.email" alt="Profile picture" class="img-circle center-block profile-picture"></a>
-		<p class="text-muted text-center text-white"><small><em>{{user.profile.email}}</em></small></p>
-	</div>
 	<!-- Display if user is looged in -->
 	<div ng-if="!!user.provider">
 		<ul class="nav">

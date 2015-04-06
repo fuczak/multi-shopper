@@ -107,12 +107,12 @@
 					"unit": null
 				},
 				{
-					"name": "tomatoes",
+					"name": "tomato",
 					"quantity": 2,
 					"unit": null
 				},
 				{
-					"name": "potatoes",
+					"name": "potato",
 					"quantity": 4,
 					"unit": null
 				},
@@ -122,9 +122,9 @@
 					"unit": "g"
 				},
 				{
-					"name": "garlic",
+					"name": "garlic clove",
 					"quantity": 2,
-					"unit": "clove"
+					"unit": null
 				},
 				{
 					"name": "lemon juice",
@@ -186,7 +186,7 @@
 					"unit": "g"
 				},
 				{
-					"name": "potatoes",
+					"name": "potato",
 					"quantity": 2,
 					"unit": null
 				},
@@ -285,9 +285,9 @@
 					"unit": null
 				},
 				{
-					"name": "garlic",
+					"name": "garlic clove",
 					"quantity": 1,
-					"unit": "clove"
+					"unit": null
 				},
 				{
 					"name": "leek",
@@ -349,7 +349,7 @@
 					"unit": null
 				},
 				{
-					"name": "stick of celery",
+					"name": "celery stick",
 					"quantity": 1,
 					"unit": null
 				},
@@ -418,9 +418,9 @@
 					"unit": null
 				},
 				{
-					"name": "garlic",
+					"name": "garlic clove",
 					"quantity": 1,
-					"unit": "clove"
+					"unit": null
 				},
 				{
 					"name": "spaghetti",
@@ -457,11 +457,91 @@
 	],
 	"ingredients": [
 		{
-			"name": "carrots",
+			"name": "entrecote",
+			"unit": "g"
+		},
+		{
+			"name": "water",
+			"unit": "l"
+		},
+		{
+			"name": "broth/turkey breast",
+			"unit": "g"
+		},
+		{
+			"name": "carrot",
 			"unit": null
 		},
 		{
-			"name": "potatoes",
+			"name": "onion",
+			"unit": null
+		},
+		{
+			"name": "parsley",
+			"unit": null
+		},
+		{
+			"name": "celery",
+			"unit": null
+		},
+		{
+			"name": "garlic clove",
+			"unit": null
+		},
+		{
+			"name": "leek",
+			"unit": null
+		},
+		{
+			"name": "salt",
+			"unit": null
+		},
+		{
+			"name": "vegeta",
+			"unit": null
+		},
+		{
+			"name": "pepper",
+			"unit": null
+		},
+		{
+			"name": "parsley leave",
+			"unit": null
+		},
+		{
+			"name": "lavage",
+			"unit": null
+		},
+		{
+			"name": "chicken breast",
+			"unit": "g"
+		},
+		{
+			"name": "beetroot",
+			"unit": null
+		},
+		{
+			"name": "tomato",
+			"unit": null
+		},
+		{
+			"name": "potato",
+			"unit": null
+		},
+		{
+			"name": "cabbage",
+			"unit": null
+		},
+		{
+			"name": "lemon juice",
+			"unit": "tsp."
+		},
+		{
+			"name": "olive oil",
+			"unit": null
+		},
+		{
+			"name": "tomato paste",
 			"unit": null
 		}
 	]

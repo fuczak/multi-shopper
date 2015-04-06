@@ -1,6 +1,7 @@
 'use strict';
 
 app.factory('Recipe', ['FURL', 'Auth', '$firebaseArray', function(FURL, Auth, $firebaseArray) {
+	
 	var ref = new Firebase(FURL);
 
 	var Recipe = {
