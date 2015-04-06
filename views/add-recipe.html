@@ -50,10 +50,10 @@
 						<div class="input-group">
 							<div class="input-group-addon"><i class="icon ion-pricetags"></i></div>
 							<ui-select multiple ng-model="recipe.tags" theme="bootstrap" ng-disabled="disabled">
-								<ui-select-match placeholder="Select methods">{{$item}}</ui-select-match>
-								<ui-select-choices repeat="tag in availableTags | filter:$select.search">
-									<p class="text-white">{{tag}}</p>
-								</ui-select-choices>
+							<ui-select-match placeholder="Select methods">{{$item}}</ui-select-match>
+							<ui-select-choices repeat="tag in availableTags | filter:$select.search">
+							<p class="text-white">{{tag}}</p>
+							</ui-select-choices>
 							</ui-select>
 						</div>
 						<hr>
@@ -62,10 +62,10 @@
 						<div class="row">
 							<div class="col-md-4 ingredient-form">
 								<ui-select multiple ng-model="recipe.ingredients" theme="bootstrap" ng-disabled="disabled">
-									<ui-select-match placeholder="Select ingredients">{{$item.name}}</ui-select-match>
-									<ui-select-choices repeat="ingredient in availableIngredients | filter:$select.search">
-										<p class="text-white">{{ingredient.name}}</p>
-									</ui-select-choices>
+								<ui-select-match placeholder="Select ingredients">{{$item.name}}</ui-select-match>
+								<ui-select-choices repeat="ingredient in availableIngredients | filter:$select.search">
+								<p class="text-white">{{ingredient.name}}</p>
+								</ui-select-choices>
 								</ui-select>
 							</div>
 							<div class="col-md-8">
@@ -83,13 +83,11 @@
 						<hr>
 						<!-- Button group -->
 						<div class="text-center">
-							<input ng-disabled="recipeForm.$invalid" type="submit" value="Add your recipe" class="btn btn-lg btn-round-lg btn-success">
+							<buttob ng-disabled="recipeForm.$invalid" class="btn btn-lg btn-round-lg btn-success" ng-click="addRecipe(recipe)">Add this recipe</buttob>
 						</div>
 					</form>
 				</div>
-			<pre>{{recipe | json}}</pre>
-			<pre>{{availableIngredients | json}}</pre>
+			</div>
 		</div>
 	</div>
-</div>
 </div>

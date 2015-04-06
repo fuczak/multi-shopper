@@ -9,7 +9,7 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'Ingredient', 'Auth', 'toaster
 	$scope.availableTags = ['Rice/Pasta','Risotto','Plov','Jam','Boil','Stew','Fry','Yoghurt','Reheat','Bake','Steam'];
 	$scope.availableIngredients = Ingredient.defaultIngredients;
 
-  $scope.recipes = Recipe.defaultRecipes;
+	$scope.recipes = Recipe.defaultRecipes;
 
 	$scope.addRecipe = function(recipe, user) {
 		ngProgress.start();
@@ -17,6 +17,7 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'Ingredient', 'Auth', 'toaster
 		Recipe.addRecipe(angular.copy(recipe), Auth.user)
 		.then(function() {
 			ngProgress.complete();
+			$scope.recipe = '';
 			toaster.pop('success', 'Your recipe has been added!');
 		},function(error) {
 			ngProgress.complete();
