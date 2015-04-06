@@ -23,17 +23,4 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'Ingredient', 'Auth', 'toaster
 			toaster.pop('alert', error.message)
 		});
 	};
-
-	//The code below is only for generating ingredient list as a reference
-	// $scope.test = [];
-	// $scope.evalIngredients = function() {
-	// 	for (var i = 0; i < $scope.recipes.length; i++) {
-	// 		for (var j = 0; j < $scope.recipes[i].ingredients.length; j++) {
-	// 			$scope.test.push($scope.recipes[i].ingredients[j].name)
-	// 		}
-	// 	} 
-	// 	console.log($scope.test.length);
-	// 	$scope.uniqueTest = _.uniq($scope.test);
-	// 	console.log($scope.uniqueTest.length)
-	// };
 }]);

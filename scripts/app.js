@@ -19,6 +19,10 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 			}, 500);
 		});
 	}])
+	.run(['ngProgress', function(ngProgress) {
+		ngProgress.height("10px");
+		ngProgress.color("white");
+	}])
 	.config(['$routeProvider', 'snapRemoteProvider', 'gravatarServiceProvider', function($routeProvider, snapRemoteProvider, gravatarServiceProvider) {
 		$routeProvider
 			.when('/', {

@@ -2,8 +2,6 @@
 
 app.controller('AuthCtrl', ['$scope', 'Auth', 'toaster', '$location', 'ngProgress', function($scope, Auth, toaster, $location, ngProgress) {
 	
-	ngProgress.height("10px");
-	ngProgress.color("white");
 	$scope.block;
 
 	$scope.register = function(user) {
