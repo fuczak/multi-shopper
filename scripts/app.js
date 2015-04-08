@@ -40,7 +40,8 @@ var app = angular.module('MultiShopper', ['ngRoute', 'snap', 'ui.gravatar', 'fir
 				templateUrl: 'views/plan.html'
 			})
 			.when('/fridge', {
-				templateUrl: 'views/fridge.html'
+				templateUrl: 'views/fridge.html',
+				controller: 'FridgeCtrl'
 			})
 			.when('/browse', {
 				templateUrl: 'views/browse.html',
