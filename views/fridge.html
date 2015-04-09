@@ -13,11 +13,12 @@
 							<div class="input-group-addon">{{ingredient.name}}</div>
 							<input type="number" name="prepTime" ng-model="ingredient.quantity" placeholder="Enter quantity" class="form-control">
 							<div class="input-group-addon">{{ingredient.unit}}</div>
-							<div class="input-group-addon"><button class="btn btn-info btn-xs btn-round-xs" ng-click="updateIngredient(ingredient)">Update</button></div>
 							<div class="input-group-addon"><button class="btn btn-danger btn-xs btn-round-xs" ng-click="removeIngredient(ingredient)">Remove</button></div>
 						</div>
 						<br>
 					</div>
+
+					<button class="btn btn-transparent btn-round" ng-click="updateFridge(fridge.ingredients)">Update your fridge!</button>
 
 					<pre>{{fridge.ingredients | json}}</pre>
 

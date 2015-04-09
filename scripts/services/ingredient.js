@@ -12,14 +12,22 @@ app.service('Ingredient', ['FURL', '$firebaseArray', function(FURL, $firebaseArr
 		addToFridge: function(ingredient, user) {
 			return $firebaseArray(ref.child('profiles').child(user.uid).child('fridge_stock')).$add(ingredient);
 		},
-		updateFridge: function(ingredient, user) {
-			console.log(ingredient)
+		updateFridge: function(ingredients, user) {
+			return $firebaseArray(ref.child('profiles').child(user.uid).child('fridge_stock')).$loaded(function(list) {
+				for (var i = 0; i < ingredients.length; i++) {
+					if (ingredients[i].quantity) {
+						var x = list.$indexFor(ingredients[i].$id);
+						list[x].quantity = ingredients[i].quantity;
+						list.$save(x);
+					};
+				};
+			});
 		},
 		removeFromFridge: function(ingredient, user) {
-			// alert(ingredient.$id)
-			console.log($firebaseArray(ref.child('profiles').child(user.uid).child('fridge_stock')).$getRecord(ingredient.$id+''));
-			// alert($firebaseArray(ref.child('profiles').child(user.uid).child('fridge_sto	ck')).$indexFor(ingredient.$id));
-			// console.log($firebaseArray(ref.child('profiles').child(user.uid).child('fridge_stock')))
+			$firebaseArray(ref.child('profiles').child(user.uid).child('fridge_stock')).$loaded(function(list) {
+				var x = list.$indexFor(ingredient.$id);
+				return list.$remove(list[x]);
+			});
 		}
 	};
 

@@ -6,11 +6,18 @@ app.controller('FridgeCtrl', ['$scope', 'Auth', 'Ingredient', 'ngProgress', 'toa
 	$scope.fridge = {
 		ingredients: Ingredient.getFridge(Auth.user)
 	}
-	$scope.updateIngredient = function(ingredient) {
-		Ingredient.updateFridge(ingredient, Auth.user)
+	$scope.updateFridge = function(ingredients) {
+		ngProgress.start();
+		Ingredient.updateFridge(ingredients, Auth.user).then(function() {
+			toaster.pop('success', 'Your fridge has been updated.')
+			ngProgress.complete();
+		}, function(error) {
+			ngProgress.complete();
+			toaster.pop('warning', error.message);
+		});
 	};
 	$scope.removeIngredient = function(ingredient) {
-		Ingredient.removeFromFridge(ingredient, Auth.user)
+		Ingredient.removeFromFridge(ingredient, Auth.user);
 	};
 	$scope.addToFridge = function(ingredient) {
 
