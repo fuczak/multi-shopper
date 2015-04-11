@@ -1,7 +1,30 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h2 class="text-center">Plan a week!</h2>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel">
+				<div class="panel-heading">
+					<h1 class="text-center">Plan your shopping!</h1>
+				</div>
+				<div class="panel-body">
+					<p>How many days would you like to plan?</p>
+					<input type="number" placeholder="Days" ng-model="daynum">
+					<div class="day-tile" ng-repeat="day in plan.days track by $index">
+						<div class="row">
+							<div class="col-md-2">
+								<p class="pull-right">Day {{$index+1}}:</p>
+							</div>
+							<div class="col-md-10">
+								<ui-select ng-model="plan.days[$index]" theme="bootstrap" ng-disabled="disabled" on-select="addToFridge(fridge.newIngredient)">
+									<ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match allow-clear="true">
+									<ui-select-choices repeat="recipe in recipes | filter: $select.search">
+										<p class="text-white" ng-bind-html="recipe.name | highlight: $select.search"></p>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
