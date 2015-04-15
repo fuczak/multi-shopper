@@ -12,25 +12,22 @@
 				</div>
 				<br>
 					<div class="row">
-						<div class="col-md-3 recipe-list-card" ng-repeat="recipe in recipes | filter:searchText">
-							<div class="well">
-								<h3>{{recipe.name}} - <small class="muted">{{recipe.prepTime}} + {{recipe.cookTime}} minutes</small></h3>
-								<hr>
-								<span class="label label-info label-custom" ng-repeat="tag in recipe.tags | filter:searchText"><p>{{tag}}</p></span>
-								<button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#recipe{{$index}}" aria-expanded="false" aria-controls="collapseExample">
-								  Show more <span class="caret"></span>
-								</button>
-								<div class="collapse" id="recipe{{$index}}">
-									<div class="well">
-										<h4>Ingredients</h4>
-										<ul class="list-group">
-											<li ng-repeat="ingredient in recipe.ingredients">
-												<p><strong>{{ingredient.quantity}}</strong>{{ingredient.unit}} <em>{{ingredient.name}}</em></p>
-											</li>
-										</ul>
+						<div class="col-md-10 col-md-offset-1">
+							<div class="list-group">
+								<div class="media recipe-list-card" ng-repeat="recipe in recipes | filter: searchText">
+									<div class="media-left media-middle">
+										<a href="#">
+											<h3 class="list-group-item-heading text-white">{{recipe.name}}</h3>
+										</a>
 									</div>
+									<div class="media-body">
+										<h5 class="list-group-item-text">Time needed: {{recipe.prepTime + recipe.cookTime}} minutes <span><button class="btn btn-round btn-transparent" ng-repeat="tag in recipe.tags" disabled="disabled"><span class="text-white">{{tag}}</span></button></span></h5>
+										<hr>
+										<p><span ng-repeat="ingredient in recipe.ingredients">{{ingredient.name}}{{$last ? '' : ','}}</span></p>
+									</div>
+									<hr>
 								</div>
-							</div>
+							</div>	
 						</div>
 					</div>
 				</div>

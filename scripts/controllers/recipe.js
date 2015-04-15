@@ -24,4 +24,13 @@ app.controller('RecipeCtrl', ['$scope', 'Recipe', 'Ingredient', 'Auth', 'toaster
 			toaster.pop('alert', error.message)
 		});
 	};
+
+	$scope.addNewIngredient = function(newIngredient) {
+		console.log(newIngredient);
+		var userIngredient = {
+			name: newIngredient,
+			unit: null
+		};
+		return userIngredient;
+	};
 }]);

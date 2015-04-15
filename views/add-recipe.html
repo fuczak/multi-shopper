@@ -49,23 +49,23 @@
 						<h3>Used cooking methods</h3>
 						<div class="input-group">
 							<div class="input-group-addon"><i class="icon ion-pricetags"></i></div>
-							<ui-select multiple ng-model="recipe.tags" theme="bootstrap" ng-disabled="disabled">
-							<ui-select-match placeholder="Select methods">{{$item}}</ui-select-match>
-							<ui-select-choices repeat="tag in availableTags | filter:$select.search">
-							<p class="text-white">{{tag}}</p>
-							</ui-select-choices>
-							</ui-select>
+								<ui-select multiple ng-model="recipe.tags" ng-disabled="disabled">
+									<ui-select-match placeholder="Select methods">{{$item}}</ui-select-match>
+									<ui-select-choices repeat="tag in availableTags | filter:$select.search">
+										<p>{{tag}}</p>
+									</ui-select-choices>
+								</ui-select>
 						</div>
 						<hr>
 						<!-- Ingredients -->
 						<h3>Ingredients</h3>
 						<div class="row">
 							<div class="col-md-4 ingredient-form">
-								<ui-select multiple ng-model="recipe.ingredients" theme="bootstrap" ng-disabled="disabled">
-								<ui-select-match placeholder="Select ingredients">{{$item.name}}</ui-select-match>
-								<ui-select-choices repeat="ingredient in availableIngredients | filter:$select.search">
-								<p class="text-white">{{ingredient.name}}</p>
-								</ui-select-choices>
+								<ui-select multiple append-to-body="true" tagging="addNewIngredient" ng-model="recipe.ingredients" ng-disabled="disabled">
+									<ui-select-match placeholder="Select ingredients">{{$item.name}}</ui-select-match>
+										<ui-select-choices repeat="ingredient in availableIngredients | filter:$select.search">
+											<p>{{ingredient.name}}</p>
+										</ui-select-choices>
 								</ui-select>
 							</div>
 							<div class="col-md-8">
