@@ -42,6 +42,9 @@ snap-content {
 	border-radius: 0;
 	color: #fff;
 }
+.panel input {
+  color: #555;
+}
 nav.navbar {
   height: 60px;
 }
