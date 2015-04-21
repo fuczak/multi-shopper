@@ -23,6 +23,9 @@
 							</div>
 						</div>
 					</div>
+					<div>
+						<p ng-repeat="ingredient in neededIngredients">{{ingredient.name}}: {{ingredient.quantity}}</p>
+					</div>
 					<button class="btn" ng-click="submitPlan(plan)">Submit</button>
 				</div>
 			</div>

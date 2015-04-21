@@ -9,6 +9,7 @@ app.controller('PlanCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
 
 	$scope.$watch('daynum', function(oldValue, newValue) {
 		$scope.plan.days = [];
+		$scope.neededIngredients = [];
 		if($scope.daynum) {
 			for(var i = 0; i < $scope.daynum; i++) {
 				$scope.plan.days.push({});
@@ -18,10 +19,17 @@ app.controller('PlanCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
 
 	$scope.submitPlan = function(plan) {
 		$scope.neededIngredients = [];
-		$scope.neededIngredients = _.flatten(_.map(plan.days, 'ingredients'))
-		$scope.neededIngredients.map(function(e) {
-			var index = $scope.neededIngredients.indexOf(e)
-			return index === -1 ? e : console.log($scope.neededIngredients[index])
-		})
+		$scope.neededIngredients = _.chain(plan.days)
+			.map('ingredients')
+			.flatten()
+			.groupBy('name')
+			.map(function(value, key) {
+				return {
+					name: key,
+					quantity: (value.length > 1) ? value.reduce(function(a, b) { return a + b.quantity }, 0) : value[0].quantity,
+					unit: value[0].unit
+				}
+			})
+			.sortBy('name');
 	};
 }]);
