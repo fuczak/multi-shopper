@@ -14,7 +14,7 @@
 								<p class="pull-right">Day {{$index+1}}:</p>
 							</div>
 							<div class="col-md-10">
-								<ui-select ng-model="plan.days[$index]" theme="bootstrap" ng-disabled="disabled" on-select="addToFridge(fridge.newIngredient)">
+								<ui-select ng-model="plan.days[$index]" theme="bootstrap" ng-disabled="disabled" >
 									<ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match allow-clear="true">
 									<ui-select-choices repeat="recipe in recipes | filter: $select.search">
 										<p ng-bind-html="recipe.name | highlight: $select.search"></p>
@@ -23,14 +23,11 @@
 							</div>
 						</div>
 					</div>
-					<div>
-						<p ng-repeat="ingredient in neededIngredients">{{ingredient.name}}: {{ingredient.quantity}}</p>
-					</div>
 					<button class="btn" ng-click="submitPlan(plan)">Submit</button>
 				</div>
 			</div>
 			<pre>{{neededIngredients | json}}</pre>
-			<pre>{{plan | json}}</pre>
+			<!-- <pre>{{plan | json}}</pre> -->
 		</div>
 	</div>
 </div>

@@ -1,7 +1,8 @@
 'use strict';
 
-app.controller('PlanCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
+app.controller('PlanCtrl', ['$scope', 'Recipe', 'Plan', 'Auth', function($scope, Recipe, Plan, Auth) {
 
+	$scope.user = Auth.user;
 	$scope.recipes = Recipe.defaultRecipes;
 	$scope.plan = {
 		days: []
@@ -18,18 +19,7 @@ app.controller('PlanCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
 	})
 
 	$scope.submitPlan = function(plan) {
-		$scope.neededIngredients = [];
-		$scope.neededIngredients = _.chain(plan.days)
-			.map('ingredients')
-			.flatten()
-			.groupBy('name')
-			.map(function(value, key) {
-				return {
-					name: key,
-					quantity: (value.length > 1) ? value.reduce(function(a, b) { return a + b.quantity }, 0) : value[0].quantity,
-					unit: value[0].unit
-				}
-			})
-			.sortBy('name');
+		Plan.createPlan(plan, $scope.user);
+		$scope.daynum = 0;
 	};
 }]);
